@@ -15,5 +15,5 @@ mongoose.connect('mongodb+srv://' + process.env.USERMONGO + ':' + process.env.PA
 
 console.log('Servidor ligado!');
 
-app.listen(3334);
+app.listen(process.env.PORT || 3334);
 
