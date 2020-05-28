@@ -16,7 +16,7 @@ const SpotSchema = new mongoose.Schema({
 });
 
 SpotSchema.virtual('thumbnail_url').get(function() {
-    return `https://tchelo-air-rfr.herokuapp.com/files/${this.thumbnail}';
-})
+    return `https://tchelo-air-rfr.herokuapp.com/files/${this.thumbnail}`;
+});
 
 module.exports = mongoose.model('Spot', SpotSchema);
