@@ -9,6 +9,14 @@ const SpotSchema = new mongoose.Schema({
         type : mongoose.Schema.Types.ObjectId,
         ref: 'User'
     }
+}, {
+    toJSON: {
+        virtuals : true,
+    },
 });
+
+SpotSchema.virtual('thumbnail_url').get(function() {
+    return `https://tchelo-air-rfr.herokuapp.com/files/${this.thumbnail}';
+})
 
 module.exports = mongoose.model('Spot', SpotSchema);
